@@ -6,13 +6,21 @@ import { createBrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store.js";
 
+// Privet Route
+import PriveteRoute from "./components/PriveteRoute.jsx";
+
 // auth
 import Login from "./pages/Auth/Login.jsx";
 import Register from "./pages/Auth/Register.jsx";
 
+import Profile from "./pages/User/Profile.jsx";
+
 const route = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
+      <Route path="" element={<PriveteRoute />}>
+        <Route path="/profile" element={<Profile />} />
+      </Route>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
     </Route>
