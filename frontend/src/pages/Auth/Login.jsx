@@ -5,7 +5,7 @@ import { setCredientails } from "../../redux/features/auth/authSlice";
 import { toast } from "react-toastify";
 import { useLoginMutation } from "../../redux/api/usersApiSlice";
 import { ScaleLoader } from "react-spinners";
-import gradient1 from "../../../public/gradient1.png";
+import gradient1 from "/gradient1.png";
 
 const Login = () => {
   const [email, setEmail] = useState("");
