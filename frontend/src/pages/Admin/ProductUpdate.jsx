@@ -69,8 +69,8 @@ const ProductUpdate = () => {
 
       const { data } = await updateProduct({ productId: params._id, formData });
 
-      if (data.error) {
-        toast.error(data.error);
+      if (data.message) {
+        toast.error(data.message);
       } else {
         toast.success(`Product is successfully updated.`);
         navigate("/admin/allproductslist");
@@ -187,6 +187,7 @@ const ProductUpdate = () => {
                   className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white"
                   onChange={(e) => setCategory(e.target.value)}
                 >
+                  <option>Choose </option>
                   {categories?.map((c) => (
                     <option key={c._id} value={c._id}>
                       {c.name}

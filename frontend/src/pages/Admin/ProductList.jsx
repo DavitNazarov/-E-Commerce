@@ -54,7 +54,11 @@ const ProductList = () => {
       const { data } = await createProduct(productData);
 
       if (data.error) {
-        toast.error("Can not create product, please try again.");
+        toast.error(
+          `Can not create product, please try again.${
+            data?.message + "  value."
+          } `
+        );
       } else {
         toast.success(`${data.name} is created successfully`);
         navigate("/");
@@ -162,6 +166,7 @@ const ProductList = () => {
                   className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white"
                   onChange={(e) => setCategory(e.target.value)}
                 >
+                  <option>Choose</option>
                   {categories?.map((c) => (
                     <option key={c._id} value={c._id}>
                       {c.name}

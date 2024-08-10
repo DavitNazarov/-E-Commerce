@@ -21,12 +21,14 @@ import CategoryList from "./pages/Admin/CategoryList.jsx";
 import ProductList from "./pages/Admin/ProductList.jsx";
 import ProductUpdate from "./pages/Admin/ProductUpdate.jsx";
 import AllProducts from "./pages/Admin/AllProducts.jsx";
+import Home from "./Home.jsx";
 
 const route = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
+      <Route index={true} path="/" element={<Home />} />
 
       <Route path="" element={<PriveteRoute />}>
         <Route path="/profile" element={<Profile />} />
