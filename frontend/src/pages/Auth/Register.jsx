@@ -5,7 +5,7 @@ import { setCredientails } from "../../redux/features/auth/authSlice";
 import { toast } from "react-toastify";
 import { useRegisterMutation } from "../../redux/api/usersApiSlice";
 import { ScaleLoader } from "react-spinners";
-import gradient2 from "../../../public/gradient2.png";
+import gradient2 from "/gradient2.png";
 
 const Register = () => {
   const [username, setUsername] = useState("");

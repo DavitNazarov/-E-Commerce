@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+// import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import {
   useCreateProductMutation,
@@ -19,7 +19,7 @@ const ProductList = () => {
   const [stock, setStock] = useState(0);
   const [imageUrl, setImageUrl] = useState(null);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [uploadProductImage] = useUploadProductImageMutation();
   const [createProduct] = useCreateProductMutation();
   const { data: categories } = useFetchCategoriesQuery();
@@ -49,7 +49,7 @@ const ProductList = () => {
       productData.append("category", category);
       productData.append("quantity", quantity);
       productData.append("brand", brand);
-      productData.append("InStock", stock);
+      productData.append("countInStock", stock);
 
       const { data } = await createProduct(productData);
 
@@ -61,7 +61,7 @@ const ProductList = () => {
         );
       } else {
         toast.success(`${data.name} is created successfully`);
-        navigate("/");
+        // navigate("/");
       }
     } catch (error) {
       console.error(error);
@@ -166,7 +166,7 @@ const ProductList = () => {
                   className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white"
                   onChange={(e) => setCategory(e.target.value)}
                 >
-                  <option>Choose</option>
+                  <option className="bg-gray-900">Choose</option>
                   {categories?.map((c) => (
                     <option key={c._id} value={c._id}>
                       {c.name}

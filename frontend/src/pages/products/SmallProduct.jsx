@@ -7,7 +7,7 @@ const SmallProduct = ({ product }) => {
         <img
           src={product.image}
           alt={product.name}
-          className="h-[250px] w-[100%] rounded object-fill"
+          className=" w-[100%] rounded aspect-square object-cover "
         />
         <div className="p-54">
           <Link to={`/product/${product._id}`}>

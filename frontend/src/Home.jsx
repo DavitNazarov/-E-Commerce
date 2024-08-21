@@ -3,6 +3,7 @@ import { useGetProductsQuery } from "./redux/api/productApiSlice";
 import { RingLoader } from "react-spinners";
 import Header from "./components/Header";
 import Message from "./components/Message";
+import Product from "./pages/products/Product";
 
 const Home = () => {
   const { keyword } = useParams();
@@ -12,7 +13,9 @@ const Home = () => {
     <>
       {!keyword ? <Header /> : null}
       {isLoading ? (
-        <RingLoader />
+        <div className=" text-center">
+          <RingLoader />
+        </div>
       ) : isError ? (
         <Message variant="danger">
           {isError?.data.message || isError.error}
@@ -36,7 +39,7 @@ const Home = () => {
             <div className="flex justify-center flex-wrap mt-[2rem]">
               {data.products.map((product) => (
                 <div key={product._id}>
-                  {/* <Product product={product} />*/}
+                  <Product product={product} />
                 </div>
               ))}
             </div>

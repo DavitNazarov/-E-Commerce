@@ -57,12 +57,12 @@ const ProductCarusel = () => {
                 <img
                   src={image}
                   alt={name}
-                  className="w-full rounded-lg object-cover h-[30rem]"
+                  className="w-full rounded-lg object-cover h-[23rem]"
                 />
 
                 <div className="mt-4 flex justify-between">
                   <div className="one">
-                    <h2>{name}</h2>
+                    <h2>{name.substring(0, 40)}</h2>
                     <p> {price} $</p> <br /> <br />
                     <p className="w-[25rem]">
                       {description.substring(0, 40)} ...
@@ -75,7 +75,7 @@ const ProductCarusel = () => {
                         <FaStore className="mr-2 text-white" /> Brand: {brand}
                       </h1>
                       <h1 className="flex items-center mb-6">
-                        <FaClock className="mr-2 text-white" /> Added:{" "}
+                        <FaClock className="mr-2 text-white" /> Added:
                         {moment(createdAt).fromNow()}
                       </h1>
                       <h1 className="flex items-center mb-6">
@@ -86,15 +86,15 @@ const ProductCarusel = () => {
 
                     <div className="two">
                       <h1 className="flex items-center mb-6">
-                        <FaStar className="mr-2 text-white" /> Ratings:{" "}
+                        <FaStar className="mr-2 text-white" /> Ratings:
                         {Math.round(rating)}
                       </h1>
                       <h1 className="flex items-center mb-6">
-                        <FaShoppingCart className="mr-2 text-white" /> Quality:{" "}
+                        <FaShoppingCart className="mr-2 text-white" /> Quality:
                         {quantity}
                       </h1>
                       <h1 className="flex items-center mb-6">
-                        <FaBox className="mr-2 text-white" /> In Stock:{" "}
+                        <FaBox className="mr-2 text-white" /> In Stock:
                         {countInStock}
                       </h1>
                     </div>
